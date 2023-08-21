@@ -1,12 +1,13 @@
 
-
+training_pipeline_config:
+  pipeline_name: housing
+  artifact_dir: artifact
 
 
 
 data_ingestion_config:
   dataset_download_url: https://data.mendeley.com/public-files/datasets/72ptz43s9v/files/26197eb8-15bc-4e06-a269-aa10ddc286f0/file_downloaded
   raw_data_dir: raw_data
-  tgz_download_dir: tgz_data
   ingested_dir: ingested_data
   ingested_train_dir: train
   ingested_test_dir: test 
