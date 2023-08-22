@@ -48,11 +48,14 @@ DATA_VALIDATION_REPORT_FILE_NAME_KEY= "report_file_name"
 DATA_VALIDATION_REPORT_PAGE_FILE_NAME_KEY ="report_page_file_name"
 
 
-
-
-
-
-
+#data transformation related variable 
+DATA_TRANSFORMATON_CONFIG_KEY = "data_transformation_config"
+DATA_TRANSFORMATION_ARTIFACT_DIR = "data_transformation"
+DATA_TRANSFORMATION_TRANSFORMED_DIR_KEY = "transformed_dir"
+DATA_TRANSFORMATION_TRANSFORMED_TRAIN_DIR_KEY= "transformed_train_dir"
+DATA_TRANSFORMATION_TRANSFORMED_TEST_DIR_KEY= "transformed_test_dir"
+DATA_TRANSFORMATION_PREPROCESSING_DIR_KEY= "preprocessing_dir"
+DATA_TRANSFOEMATION_PREPROCESSED_OBJECT_FILE_NAME_KEY= "preprocessed_object_file_name"
 
 
 

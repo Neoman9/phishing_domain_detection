@@ -1,6 +1,6 @@
 from phishing.exception import PhishingException
 from phishing.logger import logging
-from phishing.entity.config_entity import  DataIngestionConfig, TrainingPipelineConfig, DataValidationConfig
+from phishing.entity.config_entity import  DataIngestionConfig, TrainingPipelineConfig, DataValidationConfig, DataTransformationConfig
 from phishing.util.util import read_yaml_file
 
 
@@ -61,6 +61,26 @@ class configuration:
         except Exception as e:
             raise PhishingException(e,sys) from e
         
+    def get_data_transformation_config(self) -> DataTransformationConfig:
+        try:
+            artifact_dir= self.training_pipeline_config.artifact_dir
+            data_transformation_config_info= self.config_info[DATA_TRANSFORMATON_CONFIG_KEY]
+            data_transformation_artifact_dir = os.path.join(artifact_dir, DATA_INGESTION_ARTIFACT_DIR, self.time_stamp)
+
+            transformed_train_dir = os.path.join(data_transformation_artifact_dir,data_transformation_config_info(DATA_TRANSFORMATION_TRANSFORMED_DIR_KEY),data_transformation_config_info(DATA_TRANSFORMATION_TRANSFORMED_TRAIN_DIR_KEY))
+            transformed_test_dir= os.path.join(data_transformation_artifact_dir,data_transformation_config_info(DATA_TRANSFORMATION_TRANSFORMED_DIR_KEY),data_transformation_config_info(DATA_INGESTION_INGESTED_TEST_DIR_KEY))
+            preprocessed_object_file_path=os.path.join(data_transformation_artifact_dir,data_transformation_config_info(DATA_TRANSFORMATION_PREPROCESSING_DIR_KEY),data_transformation_config_info(DATA_TRANSFOEMATION_PREPROCESSED_OBJECT_FILE_NAME_KEY))
+
+            data_transformation_config= DataTransformationConfig(transformed_test_dir=transformed_test_dir,transformed_train_dir=transformed_train_dir,preprocessed_object_file_path=preprocessed_object_file_path)
+
+            logging.info(f" Data transformation config : {data_transformation_config}")
+            return data_transformation_config
+
+
+
+        except Exception as e:
+            raise PhishingException(e,sys) from e
+        
 
 
     def get_training_pipeline_config(self) ->TrainingPipelineConfig:
@@ -77,4 +97,6 @@ class configuration:
         
         except Exception as e:
             raise PhishingException(e,sys) from e 
+        
+    
     
