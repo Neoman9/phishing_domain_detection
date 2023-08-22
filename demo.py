@@ -1,8 +1,8 @@
-from housing.pipeline.pipeline import Pipeline
-from housing.exception import HousingException
-from housing.logger import logging
-from housing.config.configuration import configuration
-from housing.component.data_transformation import DataTransformation
+from phishing.pipeline.pipeline import Pipeline
+from phishing.exception import PhishingException
+from phishing.logger import logging
+from phishing.config.configuration import configuration
+
 import os
 def main():
     try:
@@ -23,6 +23,9 @@ def main():
     except Exception as e:
         logging.error(f"{e}")
         print(e)
+
+
+
 
 
 
