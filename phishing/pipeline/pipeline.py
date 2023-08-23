@@ -1,6 +1,6 @@
 from phishing.logger import logging
 from phishing.exception import PhishingException
-from phishing.entity.artifact_entity import DataIngestionArtifact, DataValidationArtifact
+from phishing.entity.artifact_entity import DataIngestionArtifact, DataValidationArtifact, DataTransformationArtifact
 from phishing.entity.config_entity import DataIngestionConfig
 from phishing.config.configuration import configuration
 from phishing.constants import *
@@ -8,6 +8,7 @@ from phishing.constants import *
 
 from phishing.component.data_ingestion import DataIngestion
 from phishing.component.data_validation import DataValidation
+from phishing.component.data_transformation import DataTransformation
 
 
 
@@ -58,6 +59,16 @@ class Pipeline(Thread):
 
         except Exception as e:
             raise PhishingException(e,sys) from e
+        
+    def start_data_transformation(self, data_ingestion_artifact: DataIngestionArtifact, data_validation_artifact: DataValidationArtifact)->DataTransformationArtifact:
+        try:
+            Data_Transformation = DataTransformation(data_transformation_config=self.config.get_data_transformation_config(),data_ingestion_artifact=data_ingestion_artifact,data_validation_artifact=data_validation_artifact)
+
+            return Data_Transformation.initiate_data_transformation()
+
+        except Exception as e:
+            raise PhishingException(e,sys) from e
+        
         
 
 

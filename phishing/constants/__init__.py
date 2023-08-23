@@ -57,11 +57,19 @@ DATA_TRANSFORMATION_TRANSFORMED_TEST_DIR_KEY= "transformed_test_dir"
 DATA_TRANSFORMATION_PREPROCESSING_DIR_KEY= "preprocessing_dir"
 DATA_TRANSFOEMATION_PREPROCESSED_OBJECT_FILE_NAME_KEY= "preprocessed_object_file_name"
 
+#schema variables 
+DATASET_SCHEMA_COLUMNS_KEY=  "columns"
+NUMERICAL_COLUMN_KEY="numerical_columns"
+TARGET_COLUMN_KEY="target_column"
 
-
-
-
-
+#model trainer related variable
+MODEL_TRAINER_CONFIG_KEY = "model_trainer_config"
+MODEL_TRAINER_ARTIFACT_DIR= "model_trainer"
+MODEL_TRAINER_TRAINED_MODEL_DIR_KEY= "trained_model_dir"
+MODEL_TRAINER_MODEL_FILE_NAME_KEY= "model_file_name"
+MODEL_TRAINER_BASE_ACCURACY_KEY="base_accuracy"
+MODEL_TRAINER_MODEL_CONFIG_DIR_KEY= "model_config_dir"
+MODEL_TRAINER_MODEL_CONFIG_FILE_NAME_KEY= "model_config_file_name"
 
 
 

@@ -1,0 +1,49 @@
+grid_search:
+  class: GridSearchCV
+  module: sklearn.model_selection
+  params:
+    cv: 5
+    verbose: 2
+
+model_selection:
+  module_0:
+    class: RandomForestClassifier
+    module: sklearn.ensemble
+    params:
+      n_estimators: 100
+      max_depth: None
+    search_param_grid:
+      n_estimators: [50, 100, 150]
+      max_depth: [None, 10, 20]
+
+  module_1:
+    class: LogisticRegression
+    module: sklearn.linear_model
+    params:
+      penalty: l2
+    search_param_grid:
+      penalty: ['l1', 'l2']
+
+  module_2:
+    class: GaussianNB
+    module: sklearn.naive_bayes
+    params: {}
+    search_param_grid: {}
+
+  module_3:
+    class: DecisionTreeClassifier
+    module: sklearn.tree
+    params:
+      max_depth: None
+    search_param_grid:
+      max_depth: [None, 10, 20]
+
+  module_4:
+    class: GradientBoostingClassifier
+    module: sklearn.ensemble
+    params:
+      n_estimators: 100
+      max_depth: 3
+    search_param_grid:
+      n_estimators: [50, 100, 150]
+      max_depth: [3, 4, 5]
