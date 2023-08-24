@@ -9,3 +9,4 @@ DataTransformationArtifact=namedtuple("DataTransformationArtifact",["is_transfor
 ModelTrainerArtifact = namedtuple("ModelTrainerArtifact", ["is_trained", "message", "trained_model_file_path","train_accuracy", "test_accuracy","train_precision", "test_precision","train_recall", "test_recall","train_f1_score", "test_f1_score",
                                    "train_roc_auc", "test_roc_auc","model_accuracy"])
 
+ModelEvaluationArtifact= namedtuple("ModelEvaluationArtifact", ["is_model_accepted", "evaluated_model_path"])

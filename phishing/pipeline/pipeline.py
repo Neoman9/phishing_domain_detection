@@ -1,6 +1,6 @@
 from phishing.logger import logging
 from phishing.exception import PhishingException
-from phishing.entity.artifact_entity import DataIngestionArtifact, DataValidationArtifact, DataTransformationArtifact, ModelTrainerArtifact
+from phishing.entity.artifact_entity import DataIngestionArtifact, DataValidationArtifact, DataTransformationArtifact, ModelTrainerArtifact, ModelEvaluationArtifact
 from phishing.entity.config_entity import DataIngestionConfig
 from phishing.config.configuration import configuration
 from phishing.constants import *
@@ -10,6 +10,7 @@ from phishing.component.data_ingestion import DataIngestion
 from phishing.component.data_validation import DataValidation
 from phishing.component.data_transformation import DataTransformation
 from phishing.component.model_trainer import ModelTrainer
+from phishing.component.model_evaluation import ModelEvaluation
 
 
 
@@ -78,6 +79,17 @@ class Pipeline(Thread):
 
         except Exception as e:
             raise PhishingException(e,sys) from e 
+        
+    def start_model_evaluation(self,data_ingestion_artifact : DataIngestionArtifact, data_validation_artifact: DataValidationArtifact,
+                               model_trainer_artifact: ModelTrainerArtifact)-> ModelEvaluationArtifact:
+        try:
+            model_evaluation = ModelEvaluation (model_evaluation_config= self.config.get_model_evaluation_config(), data_ingestion_artifact=data_ingestion_artifact,
+                                                data_validation_artifact=data_validation_artifact,model_trainer_artifact= model_trainer_artifact)
+            
+            return model_evaluation.initiate_model_evaluation()
+
+        except Exception as e:
+            raise PhishingException(e,sys) from e
         
         
 
