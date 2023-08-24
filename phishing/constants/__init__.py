@@ -80,6 +80,9 @@ BEST_MODEL_KEY = "best_model"
 HISTORY_KEY = "history"
 MODEL_PATH_KEY = "model_path"
 
+#model pusher related variables 
+MODEL_PUSHER_CONFIG_KEY = "model_pusher_config"
+MODEL_PUSHER_EXPORT_DIR_KEY= "model_export_dir"
 
 
 
