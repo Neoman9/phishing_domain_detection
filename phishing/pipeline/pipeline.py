@@ -4,6 +4,7 @@ from phishing.entity.artifact_entity import DataIngestionArtifact, DataValidatio
 from phishing.entity.config_entity import DataIngestionConfig
 from phishing.config.configuration import configuration
 from phishing.constants import *
+from housing.entity.experiment import Experiment
 
 
 

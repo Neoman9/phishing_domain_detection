@@ -31,7 +31,7 @@ EXPERIMENT_FILE_NAME="experiment.csv"
 #data ingested related variable 
 DATA_INGESTION_CONFIG_KEY = "data_ingestion_config"
 DATA_INGESTION_ARTIFACT_DIR = "data_ingestion"
-DATA_INGESTION_DATASET_DOWNLOAD_URL_KEY= "dataset_download_url"
+DATA_INGESTION_DATASET_PATH_KEY= "dataset_path"
 DATA_INGESTION_RAW_DATA_DIR_KEY = "raw_data_dir"
 DATA_INGESTION_INGESTED_DIR_KEY= "ingested_dir"
 DATA_INGESTION_INGESTED_TRAIN_DIR_KEY= "ingested_train_dir"

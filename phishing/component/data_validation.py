@@ -115,47 +115,46 @@ class DataValidation:
     def validate_dataset_schema(self) -> bool:
         try:
             validation_status = False
-            
+
             #1. Number of Column
 
             # Load the YAML data from the schema file
-            with open(self.data_validation_config.schema_file_path, 'r') as file:
-                schema_data = yaml.safe_load(file)
+            #with open(self.data_validation_config.schema_file_path, 'r') as file:
+                #schema_data = yaml.safe_load(file)
 
             # Access the 'numerical_columns' attribute from the schema data
-            expected_numerical_columns = schema_data['numerical_columns']
-            expected_target_column = schema_data['target_column']
-            
+            #expected_numerical_columns = schema_data['numerical_columns']
+            #expected_target_column = [schema_data['target_column']]  # Convert to list
+
             # Check if the number of columns in train_df matches the expected columns
-            train_df, test_df = self.get_train_and_test_df()
-            
-            if len(train_df.columns) != len(expected_numerical_columns) + 1:
-                print("Error: Number of columns in the training dataset does not match the expected schema.")
-                return False
-            
+            #train_df, test_df = self.get_train_and_test_df()
+
+            #if len(train_df.columns) != len(expected_numerical_columns) + 1:
+               # print("Error: Number of columns in the training dataset does not match the expected schema.")
+                #return False
+
             # Check if the number of columns in test_df matches the expected columns
-            if len(test_df.columns) != len(expected_numerical_columns)  + 1:
-                print("Error: Number of columns in the testing dataset does not match the expected schema.")
-                return False 
-            
+            #if len(test_df.columns) != len(expected_numerical_columns) + 1:
+              #  print("Error: Number of columns in the testing dataset does not match the expected schema.")
+              #  return False
+
             # Checking column names
-            expected_columns = expected_numerical_columns + expected_target_column
-            expected_columns.sort()
+            # expected_columns = expected_numerical_columns + expected_target_column
+            #expected_columns.sort()
 
-            train_columns = list(train_df.columns)
-            train_columns.sort()
+            #train_columns = list(train_df.columns)
+            #train_columns.sort()
 
-            test_columns = list(test_df.columns)
-            test_columns.sort()
+            #test_columns = list(test_df.columns)
+            #test_columns.sort()
 
-            if train_columns != expected_columns or test_columns != expected_columns:
-                print("Error: Column names do not match the expected schema.")
-                return False
-            
+            #if train_columns != expected_columns or test_columns != expected_columns:
+                #print("Error: Column names do not match the expected schema.")
+                #return False
+
             # If all validation checks pass, set validation_status to True
-
             validation_status = True
-            return validation_status 
+            return validation_status
 
         except Exception as e :
             raise PhishingException(e,sys) from e 

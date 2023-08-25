@@ -2,7 +2,7 @@ from phishing.pipeline.pipeline import Pipeline
 from phishing.exception import PhishingException
 from phishing.logger import logging
 from phishing.config.configuration import configuration
-
+from phishing.component.data_transformation import DataTransformation
 import os
 def main():
     try:

@@ -6,7 +6,7 @@ training_pipeline_config:
 
 
 data_ingestion_config:
-  dataset_download_url: https://data.mendeley.com/public-files/datasets/72ptz43s9v/files/26197eb8-15bc-4e06-a269-aa10ddc286f0/file_downloaded
+  dataset_path : 'c:\\Users\\neo\\Downloads\\dataset_full.csv'
   raw_data_dir: raw_data
   ingested_dir: ingested_data
   ingested_train_dir: train
