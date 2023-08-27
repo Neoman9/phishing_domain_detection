@@ -68,7 +68,7 @@ class configuration:
             data_transformation_artifact_dir = os.path.join(artifact_dir, DATA_INGESTION_ARTIFACT_DIR, self.time_stamp)
 
             transformed_train_dir = os.path.join(data_transformation_artifact_dir,data_transformation_config_info[DATA_TRANSFORMATION_TRANSFORMED_DIR_KEY],data_transformation_config_info[DATA_TRANSFORMATION_TRANSFORMED_TRAIN_DIR_KEY])
-            transformed_test_dir= os.path.join(data_transformation_artifact_dir,data_transformation_config_info[DATA_TRANSFORMATION_TRANSFORMED_DIR_KEY],data_transformation_config_info[DATA_INGESTION_INGESTED_TEST_DIR_KEY])
+            transformed_test_dir= os.path.join(data_transformation_artifact_dir,data_transformation_config_info[DATA_TRANSFORMATION_TRANSFORMED_DIR_KEY],data_transformation_config_info[DATA_TRANSFORMATION_TRANSFORMED_TEST_DIR_KEY])
             preprocessed_object_file_path=os.path.join(data_transformation_artifact_dir,data_transformation_config_info[DATA_TRANSFORMATION_PREPROCESSING_DIR_KEY],data_transformation_config_info[DATA_TRANSFOEMATION_PREPROCESSED_OBJECT_FILE_NAME_KEY])
 
             data_transformation_config= DataTransformationConfig(transformed_test_dir=transformed_test_dir,transformed_train_dir=transformed_train_dir,preprocessed_object_file_path=preprocessed_object_file_path)

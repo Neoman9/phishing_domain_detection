@@ -12,17 +12,18 @@ from phishing.entity.model_factory import evaluate_classification_model
 
 
 class ModelEvaluation:
-
-    def __Init__ (self, model_evaluation_config: ModelEvaluationConfig, data_ingestion_artifact: DataIngestionArtifact, data_validation_artifact: DataValidationArtifact,
+    
+    def __init__ (self, model_evaluation_config: ModelEvaluationConfig, data_ingestion_artifact: DataIngestionArtifact, data_validation_artifact: DataValidationArtifact,
                   model_trainer_artifact: ModelTrainerArtifact):
-        
+         
         try:
+        
             logging.info(f"{'>>' * 30}Model Evaluation log started.{'<<' * 30} ")
             self.model_evaluation_config =model_evaluation_config
             self.data_ingestion_artifact = data_ingestion_artifact
             self.data_validation_artifact= data_validation_artifact
             self.model_trainer_artifact= model_trainer_artifact
-
+            
         except Exception as e:
             raise PhishingException(e,sys) from e 
         

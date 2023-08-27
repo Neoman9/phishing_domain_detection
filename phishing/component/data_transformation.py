@@ -43,6 +43,10 @@ class DataTransformation:
 
                 numerical_columns = dataset_schema[NUMERICAL_COLUMN_KEY]
 
+                columns_to_remove = ['qty_slash_domain', 'qty_questionmark_domain', 'qty_equal_domain','qty_and_domain','qty_exclamation_domain','qty_space_domain','qty_tilde_domain','qty_comma_domain','qty_plus_domain','qty_asterisk_domain','qty_hashtag_domain','qty_dollar_domain','qty_percent_domain']
+            
+                # Remove unwanted columns from the list of numerical_columns
+                numerical_columns = [col for col in numerical_columns if col not in columns_to_remove]
                 num_pipeline= Pipeline(steps=[('imputer', SimpleImputer(strategy="median")),('scaler', StandardScaler())])
 
                 logging.info(f"Numerical columns:{numerical_columns} ")
@@ -73,7 +77,8 @@ class DataTransformation:
 
                 columns_to_remove = ['qty_slash_domain', 'qty_questionmark_domain', 'qty_equal_domain','qty_and_domain','qty_exclamation_domain','qty_space_domain','qty_tilde_domain','qty_comma_domain','qty_plus_domain','qty_asterisk_domain','qty_hashtag_domain','qty_dollar_domain','qty_percent_domain']
 
-                
+                test_df=test_df.drop_duplicates()
+                train_df=train_df.drop_duplicates()
                 logging.info(f"Splitting input and target feature from training and testing dataframe ")
                 input_feature_train_df = train_df.drop(columns=[target_column_name] + columns_to_remove, axis=1)
                 target_feature_train_df = train_df[target_column_name]
@@ -81,13 +86,7 @@ class DataTransformation:
                 input_feature_test_df = test_df.drop(columns=[target_column_name] + columns_to_remove, axis=1)
                 target_feature_test_df = test_df[target_column_name]
 
-                # Remove duplicates from feature columns
-                input_feature_train_df = input_feature_train_df.drop_duplicates()
-                input_feature_test_df = input_feature_test_df.drop_duplicates()
-        
-                # Remove duplicates from target column
-                target_feature_train_df = target_feature_train_df.drop_duplicates()
-                target_feature_test_df = target_feature_test_df.drop_duplicates()
+                
 
                 logging.info(f"Applying preprocessing object on training dataframe and testing dataframe")
                 input_feature_train_arr = preprocessing_obj.fit_transform(input_feature_train_df)

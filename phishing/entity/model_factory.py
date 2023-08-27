@@ -25,7 +25,7 @@ MODEL_SELECTION_KEY = 'model_selection'
 SEARCH_PARAM_GRID_KEY = "search_param_grid"
 
 InitializedModelDetail= namedtuple("InitializedModelDetail",
-                                   ["model_seial_number","model","param_grid_search","model_name"])
+                                   ["model_serial_number","model","param_grid_search","model_name"])
 
 GridSearchedBestModel = namedtuple("GridSearchedBestModel", ["model_serial_number",
                                                              "model",

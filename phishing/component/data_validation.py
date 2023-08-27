@@ -64,53 +64,13 @@ class DataValidation:
             raise PhishingException(e,sys) from e
         
     def get_and_save_data_drift_report(self):
-        try:
-            data_drift_report_1 = Report(metrics= [DataDriftPreset(num_stattest='ks', cat_stattest='psi', num_stattest_threshold=0.2, cat_stattest_threshold=0.)])
-
-            train_df, test_df =self.get_train_and_test_df()
-            data_drift_report_1.run(reference_data=train_df, current_data=test_df)
-
-            report= json.loads(data_drift_report_1.json())
-
-            report_file_path = self.data_validation_config.report_file_path
-            report_dir =os.path.dirname(report_file_path)
-
-            os.makedirs(report_dir,exist_ok=True)
-
-            with open(report_file_path,"w") as report_file:
-                json.dump(report,report_file, indent =6)
-
-            return report
-
-
-        except Exception as e:
-            raise PhishingException(e,sys) from e 
+        pass
         
     def save_data_drift_report_page (self):
-        try:
-            data_drift_report = Report(metrics=[DataDriftPreset(num_stattest='ks', cat_stattest='psi', num_stattest_threshold=0.2, cat_stattest_threshold=0.)])
-            train_df,test_df= self.get_train_and_test_df()
-            
-            data_drift_report.run(reference_data=train_df,current_data=test_df)
-
-            report_page_file_path= self.data_validation_config.report_page_file_path
-            report_page_dir= os.path.dirname(report_page_file_path)
-
-            os.makedirs(report_page_dir,exist_ok=True)
-            data_drift_report.save_html(report_page_file_path)
-
-        except Exception as e:
-            raise PhishingException(e,sys) from e 
+        pass
     
     def is_data_drift_found(self) -> bool:
-        try:
-            report= self.get_and_save_data_drift_report()
-            self.save_data_drift_report_page()
-            return True
-
-
-        except Exception as e:
-            raise PhishingException (e,sys) from e
+        pass
         
     def validate_dataset_schema(self) -> bool:
         try:

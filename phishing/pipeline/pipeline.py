@@ -88,7 +88,7 @@ class Pipeline(Thread):
                                model_trainer_artifact: ModelTrainerArtifact)-> ModelEvaluationArtifact:
         try:
             model_evaluation = ModelEvaluation (model_evaluation_config= self.config.get_model_evaluation_config(), data_ingestion_artifact=data_ingestion_artifact,
-                                                data_validation_artifact=data_validation_artifact,model_trainer_artifact= model_trainer_artifact)
+                                                data_validation_artifact=data_validation_artifact,model_trainer_artifact=model_trainer_artifact)
             
             return model_evaluation.initiate_model_evaluation()
 
