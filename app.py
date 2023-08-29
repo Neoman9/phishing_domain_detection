@@ -27,7 +27,7 @@ MODEL_DIR = os.path.join(ROOT_DIR, SAVED_MODELS_DIR_NAME)
 
 
 PHISHING_DATA_KEY = "phishing_data"
-PHISHING_KEY = "phishing"
+PHISHING_VALUE_KEY = "phishing"
 
 app = Flask(__name__)
 
@@ -96,11 +96,9 @@ def train():
     }
     return render_template('train.html', context=context)
 
+@app.route('/predict', methods=['GET', 'POST'])
 def predict():
-    context = {
-        PHISHING_DATA_KEY: None,
-        PHISHING_KEY: None
-    }
+    context = {PHISHING_DATA_KEY: None, PHISHING_VALUE_KEY: None}
 
     if request.method == 'POST':
         qty_dot_url = int(request.form['qty_dot_url'])
@@ -187,7 +185,7 @@ def predict():
         tld_present_params= int(request.form['tld_present_params'])
         qty_params=int(request.form['qty_params'])
         email_in_url= int(request.form['email_in_url'])
-        time_response= float(request.form['time_response'])
+        time_response= int(request.form['time_response'])
         domain_spf= int(request.form['domain_spf'])
         asn_ip= int(request.form['asn_ip'])
         time_domain_activation= int(request.form['time_domain_activation'])
@@ -202,8 +200,8 @@ def predict():
         domain_google_index= int(request.form['domain_google_index'])
         url_shortened= int(request.form['url_shortened'])
 
+
         phishing_data = PhishingData(
-            
             qty_dot_url = qty_dot_url,
             qty_hyphen_url= qty_hyphen_url,
             qty_underline_url= qty_underline_url,
@@ -301,16 +299,14 @@ def predict():
             qty_redirects= qty_redirects,
             url_google_index= url_google_index,
             domain_google_index= domain_google_index,
-            url_shortened= url_shortened,
-                                   )
+            url_shortened= url_shortened )
+        
         phishing_df = phishing_data.get_phishing_input_dataframe()
         phishing_predictor = PhishingPredictor(model_dir=MODEL_DIR)
-        phishing_value = phishing_predictor.predict(X=phishing_df)
-        context = {
-            PHISHING_DATA_KEY: phishing_data.get_phishing_data_dict(),
-            PHISHING_KEY: phishing_value,
-        }
+        phishing = phishing_predictor.predict(X=phishing_df)
+        context = {PHISHING_DATA_KEY: phishing_data.get_phishing_data_dict(),PHISHING_VALUE_KEY: phishing}
         return render_template('predict.html', context=context)
+    
     return render_template("predict.html", context=context)
 
 @app.route('/saved_models', defaults={'req_path': 'saved_models'})
