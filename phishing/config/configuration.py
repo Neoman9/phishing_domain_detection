@@ -65,7 +65,7 @@ class configuration:
         try:
             artifact_dir= self.training_pipeline_config.artifact_dir
             data_transformation_config_info= self.config_info[DATA_TRANSFORMATON_CONFIG_KEY]
-            data_transformation_artifact_dir = os.path.join(artifact_dir, DATA_INGESTION_ARTIFACT_DIR, self.time_stamp)
+            data_transformation_artifact_dir = os.path.join(artifact_dir, DATA_TRANSFORMATION_ARTIFACT_DIR, self.time_stamp)
 
             transformed_train_dir = os.path.join(data_transformation_artifact_dir,data_transformation_config_info[DATA_TRANSFORMATION_TRANSFORMED_DIR_KEY],data_transformation_config_info[DATA_TRANSFORMATION_TRANSFORMED_TRAIN_DIR_KEY])
             transformed_test_dir= os.path.join(data_transformation_artifact_dir,data_transformation_config_info[DATA_TRANSFORMATION_TRANSFORMED_DIR_KEY],data_transformation_config_info[DATA_TRANSFORMATION_TRANSFORMED_TEST_DIR_KEY])

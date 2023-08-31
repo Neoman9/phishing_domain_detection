@@ -8,649 +8,649 @@
 {% block content %}
     
 <div class="row">
-        <div class="col-md-6 col-sm-12 col-xs-6 col-lg-6">
+    <div class="col-md-6 col-sm-12 col-xs-6 col-lg-6">
             
             
-            <form action="/predict" method="post">
-                <legend>Phishing Detector Form</legend>
-                <div class="mb-3">
-                    <label class="form-label">qty_dot_url</label>
-                    <input class="form-control" type="text" name="qty_dot_url" placeholder="Number of '.' signs"
-                        required />
+        <form action="/predict" method="post">
+            <legend>Phishing Detector Form</legend>
+            <div class="mb-3">
+                <label class="form-label">qty_dot_url</label>
+                <input class="form-control" type="text" name="qty_dot_url" placeholder="Number of '.' signs"
+                    required />
 
-                </div>
-                <div class="mb-3">
-                    <label class="form-label">qty_hyphen_url</label>
-                    <input class="form-control" type="text" name="qty_hyphen_url" placeholder="Number of '-' signs"
-                        required />
+            </div>
+            <div class="mb-3">
+                <label class="form-label">qty_hyphen_url</label>
+                <input class="form-control" type="text" name="qty_hyphen_url" placeholder="Number of '-' signs"
+                    required />
 
-                </div>
-                <div class="mb-3">
-                    <label class="form-label">qty_underline_url</label>
-                    <input class="form-control" type="text" name="qty_underline_url" placeholder="Number of ”_” signs"
-                        required />
+            </div>
+            <div class="mb-3">
+                <label class="form-label">qty_underline_url</label>
+                <input class="form-control" type="text" name="qty_underline_url" placeholder="Number of ”_” signs"
+                    required />
     
-                </div>
-                <div class="mb-3">
-                    <label class="form-label">qty_slash_url</label>
-                    <input class="form-control" type="text" name="qty_slash_url" placeholder="Number of ”/” signs"
-                        required />
-    
-                </div>
-                <div class="mb-3">
-                    <label class="form-label">qty_questionmark_url</label>
-                    <input class="form-control" type="text" name="qty_questionmark_url" placeholder="Number of ”?” signs" 
-                        required />
-
-                </div>
-                <div class="mb-3">
-                    <label class="form-label">qty_equal_url</label>
-                    <input class="form-control" type="text" name="qty_equal_url" placeholder="Number of ”=” sings"
-                        required />
-
-                </div>
-                <div class="mb-3">
-                    <label class="form-label">qty_at_url</label>
-                    <input class="form-control" type="text" name="qty_at_url" placeholder="Number of ”@” signs"
-                        required />
-
-                </div>
-                <div class="mb-3">
-                    <label class="form-label">qty_and_url</label>
-                    <input class="form-control" type="text" name="qty_and_url" placeholder="Number of ”&” signs" 
-                        required />
-
-                </div>
-                <div class="mb-3">
-                    <label class="form-label">qty_exclamation_url</label>
-                    <input class="form-control" type="text" name="qty_exclamation_url" placeholder="Number of ”!” signs"
-                        required />
-    
-                </div>
-                <div class="mb-3">
-                    <label class="form-label">qty_space_url</label>
-                    <input class="form-control" type="text" name="qty_space_url" placeholder="Number of ” ” signs"
-                        required />
-
-                </div>
-                <div class="mb-3">
-                    <label class="form-label">qty_tilde_url</label>
-                    <input class="form-control" type="text" name="qty_tilde_url" placeholder="Number of " " signs"
-                        required />
-
-    
-                </div>
-                <div class="mb-3">
-                    <label class="form-label">qty_comma_url</label>
-                    <input class="form-control" type="text" name="qty_comma_url" placeholder="Number of ”,” signs"
-                        required />
-
-                </div>
-                <div class="mb-3">
-                    <label class="form-label">qty_plus_url</label>
-                    <input class="form-control" type="text" name="qty_plus_url" placeholder="Number of ”+” signs"
-                        required />
-
-                </div>
-                <div class="mb-3">
-                    <label class="form-label">qty_asterisk_url</label>
-                    <input class="form-control" type="text" name="qty_asterisk_url" placeholder="Number of ” * ” signs"
-                        required />
-    
-                </div>
-                <div class="mb-3">
-                    <label class="form-label">qty_hashtag_url</label>
-                    <input class="form-control" type="text" name="qty_hashtag_url" placeholder="Number of ”#” signs"
-                        required />
-    
-                </div>
-                <div class="mb-3">
-                    <label class="form-label">qty_dollar_url</label>
-                    <input class="form-control" type="text" name="qty_dollar_url" placeholder="Number of ”$” signs"
-                        required />
-
-                </div>
-                <div class="mb-3">
-                    <label class="form-label">qty_percent_url</label>
-                    <input class="form-control" type="text" name="qty_percent_url" placeholder="Number of ”%” signs"
-                        required />
-
-                </div>
-                <div class="mb-3">
-                    <label class="form-label">qty_tld_url</label>
-                    <input class="form-control" type="text" name="qty_tld_url" placeholder="Top level domain character length"
-                        required />
-    
-                </div>
-                <div class="mb-3">
-                    <label class="form-label">length_url</label>
-                    <input class="form-control" type="text" name="length_url" placeholder="Number of characters"
-                        required />
-    
-                </div>
-                <div class="mb-3">
-                    <label class="form-label">qty_dot_domain</label>
-                    <input class="form-control" type="text" name="qty_dot_domain" placeholder="Number of ”.” signs"
-                        required />
-    
-                </div>
-                <div class="mb-3">
-                    <label class="form-label">qty_hyphen_domain</label>
-                    <input class="form-control" type="text" name="qty_hyphen_domain" placeholder="Number of ”-” signs"
-                        required />
-    
-                </div>
-                <div class="mb-3">
-                    <label class="form-label">qty_underline_domain</label>
-                    <input class="form-control" type="text" name="qty_underline_domain" placeholder="Number of ”_” signs"
-                        required />
-
-                </div>
-                <div class="mb-3">
-                    <label class="form-label">qty_at_domain</label>
-                    <input class="form-control" type="text" name="qty_at_domain" placeholder="Number of ”@” signs"
-                        required />
-
-                </div>
-                <div class="mb-3">
-                    <label class="form-label">qty_vowels_domain</label>
-                    <input class="form-control" type="text" name="qty_vowels_domain" placeholder="qty_vowels_domain"
-                        required />
-
-                </div>
-                <div class="mb-3">
-                    <label class="form-label">domain_length</label>
-                    <input class="form-control" type="text" name="domain_length" placeholder="Number of domain characters"
-                        required />
-
-                </div>
-                <div class="mb-3">
-                    <label class="form-label">domain_in_ip</label>
-                    <input class="form-control" type="text" name="domain_in_ip" placeholder="URL domain in IP address,format Boolean [0(yes), 1(no)]"
-                        required />
-
-                </div>
-                <div class="mb-3">
-                    <label class="form-label">server_client_domain</label>
-                    <input class="form-control" type="text" name="server_client_domain" placeholder="”server” or ”client”,in domain	Boolean	[0, 1]"
-                        required />
-
-                </div>
-                <div class="mb-3">
-                    <label class="form-label">qty_dot_directory</label>
-                    <input class="form-control" type="text" name="qty_dot_directory" placeholder="Number of ”.” signs"
-                        required />
-
-                </div>
-                <div class="mb-3">
-                    <label class="form-label">qty_hyphen_directory</label>
-                    <input class="form-control" type="text" name="qty_hyphen_directory" placeholder="Number of ”-” signs"
-                        required />
-
-                </div>
-                <div class="mb-3">
-                    <label class="form-label">qty_underline_directory</label>
-                    <input class="form-control" type="text" name="qty_underline_directory" placeholder="Number of ”_” signs"
-                        required />
-
-                </div>
-                <div class="mb-3">
-                    <label class="form-label"> qty_slash_directory</label>
-                    <input class="form-control" type="text" name=" qty_slash_directory" placeholder="Number of ”/” signs"
-                        required />   
-
-                </div>
-                <div class="mb-3">
-                    <label class="form-label">qty_questionmark_directory</label>
-                    <input class="form-control" type="text" name="qty_questionmark_directory" placeholder="Number of ”?” signs"
-                        required />    
-
-                </div>
-                <div class="mb-3">
-                    <label class="form-label">qty_equal_directory</label>
-                    <input class="form-control" type="text" name="qty_equal_directory" placeholder="Number of ”=” signs"
-                        required />
-
-                </div>
-                <div class="mb-3">
-                    <label class="form-label">qty_at_directory</label>
-                    <input class="form-control" type="text" name="qty_at_directory" placeholder="Number of ”@” signs"
-                        required />
-
-                </div>
-                <div class="mb-3">
-                    <label class="form-label">qty_and_directory</label>
-                    <input class="form-control" type="text" name="qty_and_directory" placeholder="Number of ”&” signs"
-                        required />
-
-                </div>
-                <div class="mb-3">
-                    <label class="form-label">qty_exclamation_directory</label>
-                    <input class="form-control" type="text" name="qty_exclamation_directory" placeholder="Number of ”!” signs"
-                        required />
-
-                </div>
-                <div class="mb-3">
-                    <label class="form-label">qty_space_directory</label>
-                    <input class="form-control" type="text" name="qty_space_directory" placeholder="Number of ” ” signs"
-                        required />
-
-                </div>
-                <div class="mb-3">
-                    <label class="form-label">qty_tilde_directory</label>
-                    <input class="form-control" type="text" name="qty_tilde_directory" placeholder="Number of T' ” signs"
-                        required />
-
-                </div>
-                <div class="mb-3">
-                    <label class="form-label">qty_comma_directory</label>
-                    <input class="form-control" type="text" name="qty_comma_directory" placeholder="Number of ”,” signs"
-                        required />
-
-                </div>
-                <div class="mb-3">
-                    <label class="form-label">qty_plus_directory</label>
-                    <input class="form-control" type="text" name="qty_plus_directory" placeholder="Number of ”+” signs"
-                        required />
-
-                </div>
-                <div class="mb-3">
-                    <label class="form-label">qty_asterisk_directory</label>
-                    <input class="form-control" type="text" name="qty_asterisk_directory" placeholder="Number of ' *  signs"
-                        required />
-
-                </div>
-                <div class="mb-3">
-                    <label class="form-label">qty_hashtag_directory</label>
-                    <input class="form-control" type="text" name="qty_hashtag_directory" placeholder="Number of ”#” signs"
-                        required />
-
-                </div>
-                <div class="mb-3">
-                    <label class="form-label"> qty_dollar_directory</label>
-                    <input class="form-control" type="text" name=" qty_dollar_directory" placeholder="Number of ”$” signs"
-                        required />
-
-                </div>
-                <div class="mb-3">
-                    <label class="form-label">qty_percent_directory</label>
-                    <input class="form-control" type="text" name="qty_percent_directory" placeholder="Number of ”%” signs"
-                        required />  
-
-                </div>
-                <div class="mb-3">
-                    <label class="form-label"> directory_length</label>
-                    <input class="form-control" type="text" name=" directory_length" placeholder="Number of directory characters"
-                        required />
-
-                </div>
-                <div class="mb-3">
-                    <label class="form-label">qty_dot_file</label>
-                    <input class="form-control" type="text" name="qty_dot_file" placeholder="Number of ”.” signs"
-                        required />
-
-                </div>
-                <div class="mb-3">
-                    <label class="form-label">qty_hyphen_file</label>
-                    <input class="form-control" type="text" name="qty_hyphen_file" placeholder="Number of ”-” signs"
-                        required />
-
-                </div>
-                <div class="mb-3">
-                    <label class="form-label">qty_underline_file</label>
-                    <input class="form-control" type="text" name="qty_underline_file" placeholder="Number of ”_” signs"
-                        required />
-
-                </div>
-                <div class="mb-3">
-                    <label class="form-label"> qty_slash_file</label>
-                    <input class="form-control" type="text" name="qty_slash_file" placeholder="Number of ”/” signs"
-                        required />
-
-                </div>
-                <div class="mb-3">
-                    <label class="form-label"> qty_questionmark_file</label>
-                    <input class="form-control" type="text" name=" qty_questionmark_file" placeholder="Number of ”?” signs"
-                        required />
-
-                </div>
-                <div class="mb-3">
-                    <label class="form-label">  qty_equal_file</label>
-                    <input class="form-control" type="text" name="  qty_equal_file" placeholder="Number of ”=” signs"
-                        required />  
-
-                </div>
-                <div class="mb-3">
-                    <label class="form-label"> qty_at_file</label>
-                    <input class="form-control" type="text" name=" qty_at_file" placeholder="Number of ”@” signs"
-                        required />
-
-                </div>
-                <div class="mb-3">
-                    <label class="form-label"> qty_and_file</label>
-                    <input class="form-control" type="text" name=" qty_and_file" placeholder="Number of ”&” signs"
-                        required />
-
-                </div>
-                <div class="mb-3">
-                    <label class="form-label"> qty_exclamation_file</label>
-                    <input class="form-control" type="text" name=" qty_exclamation_file" placeholder="Number of ”!” signs"
-                        required />
-
-                </div>
-                <div class="mb-3">
-                    <label class="form-label"> qty_space_file</label>
-                    <input class="form-control" type="text" name=" qty_space_file" placeholder="Number of ” ” signs"
-                        required />
-
-                </div>
-                <div class="mb-3">
-                    <label class="form-label"> qty_tilde_file</label>
-                    <input class="form-control" type="text" name=" qty_tilde_file" placeholder="Number of ” T' ” signs"
-                        required />
-
-                </div>
-                <div class="mb-3">
-                    <label class="form-label"> qty_comma_file</label>
-                    <input class="form-control" type="text" name=" qty_comma_file" placeholder="Number of ”,” signs"
-                        required />
-
-                </div>
-                <div class="mb-3">
-                    <label class="form-label"> qty_plus_file</label>
-                    <input class="form-control" type="text" name=" qty_plus_file" placeholder="Number of ”+” signs"
-                        required />
-
-                </div>
-                <div class="mb-3">
-                    <label class="form-label"> qty_asterisk_file</label>
-                    <input class="form-control" type="text" name=" qty_asterisk_file" placeholder="Number of ” * ” signs"
-                        required />
-
-                </div>
-                <div class="mb-3">
-                    <label class="form-label"> qty_hashtag_file</label>
-                    <input class="form-control" type="text" name=" qty_hashtag_file" placeholder="Number of ”#” signs"
-                        required />
-
-                </div>
-                <div class="mb-3">
-                    <label class="form-label"> qty_dollar_file</label>
-                    <input class="form-control" type="text" name=" qty_dollar_file" placeholder="Number of ”$” signs"
-                        required />
-
-                </div>
-                <div class="mb-3">
-                    <label class="form-label"> qty_percent_file</label>
-                    <input class="form-control" type="text" name=" qty_percent_file" placeholder="Number of ”%” signs"
-                        required />
-
-                </div>
-                <div class="mb-3">
-                    <label class="form-label"> file_length</label>
-                    <input class="form-control" type="text" name=" file_length" placeholder="Number of file name characters"
-                        required />
-
-                </div>
-                <div class="mb-3">
-                    <label class="form-label"> qty_dot_params</label>
-                    <input class="form-control" type="text" name=" qty_dot_params" placeholder="Number of ”.” signs"
-                        required />
-
-                </div>
-                <div class="mb-3">
-                    <label class="form-label">  qty_hyphen_params</label>
-                    <input class="form-control" type="text" name="  qty_hyphen_params" placeholder="Number of ”-” signs"
-                        required />
-
-                </div>
-                <div class="mb-3">
-                    <label class="form-label"> qty_underline_params</label>
-                    <input class="form-control" type="text" name=" qty_underline_params" placeholder="Number of ”_” signs"
-                        required />
-
-                </div>
-                <div class="mb-3">
-                    <label class="form-label"> qty_slash_params</label>
-                    <input class="form-control" type="text" name=" qty_slash_params" placeholder="Number of ”/” signs"
-                        required />
-
-                </div>
-                <div class="mb-3">
-                    <label class="form-label"> qty_questionmark_params</label>
-                    <input class="form-control" type="text" name=" qty_questionmark_params" placeholder="Number of ”?” signs"
-                        required />
-
-                </div>
-                <div class="mb-3">
-                    <label class="form-label"> qty_equal_params</label>
-                    <input class="form-control" type="text" name=" qty_equal_params" placeholder="Number of ”=” signs"
-                        required />
-
-                </div>
-                <div class="mb-3">
-                    <label class="form-label"> qty_at_params</label>
-                    <input class="form-control" type="text" name=" qty_at_params" placeholder="Number of ”@” signs"
-                        required />
-
-                </div>
-                <div class="mb-3">
-                    <label class="form-label"> qty_and_params</label>
-                    <input class="form-control" type="text" name=" qty_and_params" placeholder="Number of ”&” signs"
-                        required />
-
-                </div>
-                <div class="mb-3">
-                    <label class="form-label"> qty_exclamation_params</label>
-                    <input class="form-control" type="text" name=" qty_exclamation_params" placeholder="Number of ”!” signs"
-                        required />
-
-                </div>
-                <div class="mb-3">
-                    <label class="form-label"> qty_space_params</label>
-                    <input class="form-control" type="text" name=" qty_space_params" placeholder="Number of ” ” signs"
-                        required />
-
-                </div>
-                <div class="mb-3">
-                    <label class="form-label"> qty_tilde_params</label>
-                    <input class="form-control" type="text" name=" qty_dollar_file" placeholder="Number of ” T' ” signs"
-                        required />
-    
-                </div>
-                <div class="mb-3">
-                    <label class="form-label"> qty_comma_params</label>
-                    <input class="form-control" type="text" name=" qty_comma_params" placeholder="Number of ”,” signs"
-                        required />
-
-                </div>
-                <div class="mb-3">
-                    <label class="form-label"> qty_plus_params</label>
-                    <input class="form-control" type="text" name=" qty_plus_params" placeholder="Number of ”+” signs"
-                        required />
-
-                </div>
-                <div class="mb-3">
-                    <label class="form-label"> qty_asterisk_params</label>
-                    <input class="form-control" type="text" name=" qty_asterisk_params" placeholder="Number of ”*” signs"
-                        required />
-
-                </div>
-                <div class="mb-3">
-                    <label class="form-label"> qty_hashtag_params</label>
-                    <input class="form-control" type="text" name=" qty_hashtag_params" placeholder="Number of ”#” signs"
-                        required />
-
-                </div>
-                <div class="mb-3">
-                    <label class="form-label"> qty_dollar_params</label>
-                    <input class="form-control" type="text" name=" qty_dollar_params" placeholder="Number of ”$” signs"
-                        required />
-
-                </div>
-                <div class="mb-3">
-                    <label class="form-label"> qty_percent_params</label>
-                    <input class="form-control" type="text" name=" qty_percent_params" placeholder="Number of ”%” signs"
-                        required />
-
-                </div>
-                <div class="mb-3">
-                    <label class="form-label"> params_length</label>
-                    <input class="form-control" type="text" name=" params_length" placeholder="Number of parameters characters"
-                        required />
-
-                </div>
-                <div class="mb-3">
-                    <label class="form-label"> tld_present_params</label>
-                    <input class="form-control" type="text" name=" tld_present_params" placeholder="TLD present in parameters	Boolean	[0(yes), 1(no)]"
-                        required />
-
-                </div>
-                <div class="mb-3">
-                    <label class="form-label"> qty_param</label>
-                    <input class="form-control" type="text" name=" qty_param" placeholder="	Number of parameters"
-                        required />
-
-                </div>
-                <div class="mb-3">
-                    <label class="form-label"> email_in_url</label>
-                    <input class="form-control" type="text" name=" email_in_url" placeholder="Is email present	Boolean	[0, 1]"
-                        required />
-
-                </div>
-                <div class="mb-3">
-                    <label class="form-label"> time_response</label>
-                    <input class="form-control" type="text" name=" time_response" placeholder="Domain lookup time response"
-                        required />
-
-                </div>
-                <div class="mb-3">
-                    <label class="form-label"> domain_spf</label>
-                    <input class="form-control" type="text" name=" domain_spf" placeholder="Domain has SPF Boolean	[0, 1]"
-                        required />
-
-                </div>
-                <div class="mb-3">
-                    <label class="form-label"> asn_ip</label>
-                    <input class="form-control" type="text" name=" asn_ip" placeholder=" ASN  "
-                        required />
-
-                </div>
-                <div class="mb-3">
-                    <label class="form-label"> time_domain_activation</label>
-                    <input class="form-control" type="text" name=" time_domain_activation" placeholder="Domain activation time (in days)"
-                        required />
-
-                </div>
-                <div class="mb-3">
-                    <label class="form-label"> time_domain_expiration</label>
-                    <input class="form-control" type="text" name=" time_domain_expiration" placeholder="Domain expiration time (in days)"
-                        required />
-
-                </div>
-                <div class="mb-3">
-                    <label class="form-label"> qty_ip_resolved</label>
-                    <input class="form-control" type="text" name=" qty_ip_resolved" placeholder="Number of resolved IPs"
-                        required />
-
-                </div>
-                <div class="mb-3">
-                    <label class="form-label"> qty_nameservers</label>
-                    <input class="form-control" type="text" name=" qty_nameservers" placeholder="Number of resolved NS"
-                        required />
-
-                </div>
-                <div class="mb-3">
-                    <label class="form-label"> qty_mx_servers</label>
-                    <input class="form-control" type="text" name=" qty_mx_servers" placeholder="Number of MX5 servers"
-                        required />
-
-                </div>
-                <div class="mb-3">
-                    <label class="form-label"> ttl_hostname</label>
-                    <input class="form-control" type="text" name=" ttl_hostname" placeholder="Time-To-Live (TTL)"
-                        required />
-
-                </div>
-                <div class="mb-3">
-                    <label class="form-label"> tls_ssl_certificate</label>
-                    <input class="form-control" type="text" name=" tls_ssl_certificate" placeholder="Has valid (TLS 6/SSL 7)certificate	Boolean	[0, 1]"
-                        required />
-
-                </div>
-                <div class="mb-3">
-                    <label class="form-label"> qty_redirects</label>
-                    <input class="form-control" type="text" name=" qty_redirects" placeholder="Number of redirects"
-                        required />
-
-                </div>
-                <div class="mb-3">
-                    <label class="form-label"> url_google_index</label>
-                    <input class="form-control" type="text" name=" url_google_index" placeholder="Is URL indexed on Google	Boolean	[0(yes), 1(no)]"
-                        required />
-
-                </div>
-                <div class="mb-3">
-                    <label class="form-label"> domain_google_index</label>
-                    <input class="form-control" type="text" name=" domain_google_index" placeholder="is domain indexed on Google	Boolean	[0, 1]"
-                        required />
-
-                </div>
-                <div class="mb-3">
-                    <label class="form-label"> url_shortened</label>
-                    <input class="form-control" type="text" name=" url_shortened" placeholder=" Boolean	[0, 1]"
-                        required />
-
-                </div>
-                <div class="mb-3">
-                    <input class="btn btn-primary" type="submit" value="Predict Legitimate or Phishing Domain" required />
-                </div>
+            </div>
+            <div class="mb-3">
+                <label class="form-label">qty_slash_url</label>
+                <input class="form-control" type="text" name="qty_slash_url" placeholder="Number of ”/” signs"
+                    required />
+
+            </div>
+            <div class="mb-3">
+                <label class="form-label">qty_questionmark_url</label>
+                <input class="form-control" type="text" name="qty_questionmark_url" placeholder="Number of ”?” signs" 
+                    required />
+
+            </div>
+            <div class="mb-3">
+                <label class="form-label">qty_equal_url</label>
+                <input class="form-control" type="text" name="qty_equal_url" placeholder="Number of ”=” sings"
+                    required />
+
+            </div>
+            <div class="mb-3">
+                <label class="form-label">qty_at_url</label>
+                <input class="form-control" type="text" name="qty_at_url" placeholder="Number of ”@” signs"
+                    required />
+
+            </div>
+            <div class="mb-3">
+                <label class="form-label">qty_and_url</label>
+                <input class="form-control" type="text" name="qty_and_url" placeholder="Number of ”&” signs" 
+                    required />
+
+            </div>
+            <div class="mb-3">
+                <label class="form-label">qty_exclamation_url</label>
+                <input class="form-control" type="text" name="qty_exclamation_url" placeholder="Number of ”!” signs"
+                    required />
+
+            </div>
+            <div class="mb-3">
+                <label class="form-label">qty_space_url</label>
+                <input class="form-control" type="text" name="qty_space_url" placeholder="Number of ” ” signs"
+                    required />
+
+            </div>
+            <div class="mb-3">
+                <label class="form-label">qty_tilde_url</label>
+                <input class="form-control" type="text" name="qty_tilde_url" placeholder="Number of " " signs"
+                    required />
+
+
+            </div>
+            <div class="mb-3">
+                <label class="form-label">qty_comma_url</label>
+                <input class="form-control" type="text" name="qty_comma_url" placeholder="Number of ”,” signs"
+                    required />
+
+            </div>
+            <div class="mb-3">
+                <label class="form-label">qty_plus_url</label>
+                <input class="form-control" type="text" name="qty_plus_url" placeholder="Number of ”+” signs"
+                    required />
+
+            </div>
+            <div class="mb-3">
+                <label class="form-label">qty_asterisk_url</label>
+                <input class="form-control" type="text" name="qty_asterisk_url" placeholder="Number of ” * ” signs"
+                    required />
+
+            </div>
+            <div class="mb-3">
+                <label class="form-label">qty_hashtag_url</label>
+                <input class="form-control" type="text" name="qty_hashtag_url" placeholder="Number of ”#” signs"
+                    required />
+
+            </div>
+            <div class="mb-3">
+                <label class="form-label">qty_dollar_url</label>
+                <input class="form-control" type="text" name="qty_dollar_url" placeholder="Number of ”$” signs"
+                    required />
+
+            </div>
+            <div class="mb-3">
+                <label class="form-label">qty_percent_url</label>
+                <input class="form-control" type="text" name="qty_percent_url" placeholder="Number of ”%” signs"
+                    required />
+
+            </div>
+            <div class="mb-3">
+                <label class="form-label">qty_tld_url</label>
+                <input class="form-control" type="text" name="qty_tld_url" placeholder="Top level domain character length"
+                    required />
+
+            </div>
+            <div class="mb-3">
+                <label class="form-label">length_url</label>
+                <input class="form-control" type="text" name="length_url" placeholder="Number of characters"
+                    required />
+
+            </div>
+            <div class="mb-3">
+                <label class="form-label">qty_dot_domain</label>
+                <input class="form-control" type="text" name="qty_dot_domain" placeholder="Number of ”.” signs"
+                    required />
+
+            </div>
+            <div class="mb-3">
+                <label class="form-label">qty_hyphen_domain</label>
+                <input class="form-control" type="text" name="qty_hyphen_domain" placeholder="Number of ”-” signs"
+                    required />
+
+            </div>
+            <div class="mb-3">
+                <label class="form-label">qty_underline_domain</label>
+                <input class="form-control" type="text" name="qty_underline_domain" placeholder="Number of ”_” signs"
+                    required />
+
+            </div>
+            <div class="mb-3">
+                <label class="form-label">qty_at_domain</label>
+                <input class="form-control" type="text" name="qty_at_domain" placeholder="Number of ”@” signs"
+                    required />
+
+            </div>
+            <div class="mb-3">
+                <label class="form-label">qty_vowels_domain</label>
+                <input class="form-control" type="text" name="qty_vowels_domain" placeholder="qty_vowels_domain"
+                    required />
+
+            </div>
+            <div class="mb-3">
+                <label class="form-label">domain_length</label>
+                <input class="form-control" type="text" name="domain_length" placeholder="Number of domain characters"
+                    required />
+
+            </div>
+            <div class="mb-3">
+                <label class="form-label">domain_in_ip</label>
+                <input class="form-control" type="text" name="domain_in_ip" placeholder="URL domain in IP address,format Boolean [0(yes), 1(no)]"
+                    required />
+
+            </div>
+            <div class="mb-3">
+                <label class="form-label">server_client_domain</label>
+                <input class="form-control" type="text" name="server_client_domain" placeholder="”server” or ”client”,in domain	Boolean	[0, 1]"
+                    required />
+
+            </div>
+            <div class="mb-3">
+                <label class="form-label">qty_dot_directory</label>
+                <input class="form-control" type="text" name="qty_dot_directory" placeholder="Number of ”.” signs"
+                    required />
+
+            </div>
+            <div class="mb-3">
+                <label class="form-label">qty_hyphen_directory</label>
+                <input class="form-control" type="text" name="qty_hyphen_directory" placeholder="Number of ”-” signs"
+                    required />
+
+            </div>
+            <div class="mb-3">
+                <label class="form-label">qty_underline_directory</label>
+                <input class="form-control" type="text" name="qty_underline_directory" placeholder="Number of ”_” signs"
+                    required />
+
+            </div>
+            <div class="mb-3">
+                <label class="form-label">qty_slash_directory</label>
+                <input class="form-control" type="text" name="qty_slash_directory" placeholder="Number of ”/” signs"
+                    required />   
+
+            </div>
+            <div class="mb-3">
+                <label class="form-label">qty_questionmark_directory</label>
+                <input class="form-control" type="text" name="qty_questionmark_directory" placeholder="Number of ”?” signs"
+                    required />    
+
+            </div>
+            <div class="mb-3">
+                <label class="form-label">qty_equal_directory</label>
+                <input class="form-control" type="text" name="qty_equal_directory" placeholder="Number of ”=” signs"
+                    required />
+
+            </div>
+            <div class="mb-3">
+                <label class="form-label">qty_at_directory</label>
+                <input class="form-control" type="text" name="qty_at_directory" placeholder="Number of ”@” signs"
+                    required />
+
+            </div>
+            <div class="mb-3">
+                <label class="form-label">qty_and_directory</label>
+                <input class="form-control" type="text" name="qty_and_directory" placeholder="Number of ”&” signs"
+                    required />
+
+            </div>
+            <div class="mb-3">
+                <label class="form-label">qty_exclamation_directory</label>
+                <input class="form-control" type="text" name="qty_exclamation_directory" placeholder="Number of ”!” signs"
+                    required />
+
+            </div>
+            <div class="mb-3">
+                <label class="form-label">qty_space_directory</label>
+                <input class="form-control" type="text" name="qty_space_directory" placeholder="Number of ” ” signs"
+                    required />
+
+            </div>
+            <div class="mb-3">
+                <label class="form-label">qty_tilde_directory</label>
+                <input class="form-control" type="text" name="qty_tilde_directory" placeholder="Number of T' ” signs"
+                    required />
+
+            </div>
+            <div class="mb-3">
+                <label class="form-label">qty_comma_directory</label>
+                <input class="form-control" type="text" name="qty_comma_directory" placeholder="Number of ”,” signs"
+                    required />
+
+            </div>
+            <div class="mb-3">
+                <label class="form-label">qty_plus_directory</label>
+                <input class="form-control" type="text" name="qty_plus_directory" placeholder="Number of ”+” signs"
+                    required />
+
+            </div>
+            <div class="mb-3">
+                <label class="form-label">qty_asterisk_directory</label>
+                <input class="form-control" type="text" name="qty_asterisk_directory" placeholder="Number of ' *  signs"
+                    required />
+
+            </div>
+            <div class="mb-3">
+                <label class="form-label">qty_hashtag_directory</label>
+                <input class="form-control" type="text" name="qty_hashtag_directory" placeholder="Number of ”#” signs"
+                    required />
+
+            </div>
+            <div class="mb-3">
+                <label class="form-label">qty_dollar_directory</label>
+                <input class="form-control" type="text" name="qty_dollar_directory" placeholder="Number of ”$” signs"
+                    required />
+
+            </div>
+            <div class="mb-3">
+                <label class="form-label">qty_percent_directory</label>
+                <input class="form-control" type="text" name="qty_percent_directory" placeholder="Number of ”%” signs"
+                    required />  
+
+            </div>
+            <div class="mb-3">
+                <label class="form-label">directory_length</label>
+                <input class="form-control" type="text" name="directory_length" placeholder="Number of directory characters"
+                    required />
+
+            </div>
+            <div class="mb-3">
+                <label class="form-label">qty_dot_file</label>
+                <input class="form-control" type="text" name="qty_dot_file" placeholder="Number of ”.” signs"
+                    required />
+
+            </div>
+            <div class="mb-3">
+                <label class="form-label">qty_hyphen_file</label>
+                <input class="form-control" type="text" name="qty_hyphen_file" placeholder="Number of ”-” signs"
+                    required />
+
+            </div>
+            <div class="mb-3">
+                <label class="form-label">qty_underline_file</label>
+                <input class="form-control" type="text" name="qty_underline_file" placeholder="Number of ”_” signs"
+                    required />
+
+            </div>
+            <div class="mb-3">
+                <label class="form-label">qty_slash_file</label>
+                <input class="form-control" type="text" name="qty_slash_file" placeholder="Number of ”/” signs"
+                    required />
+
+            </div>
+            <div class="mb-3">
+                <label class="form-label">qty_questionmark_file</label>
+                <input class="form-control" type="text" name="qty_questionmark_file" placeholder="Number of ”?” signs"
+                    required />
+
+            </div>
+            <div class="mb-3">
+                <label class="form-label">qty_equal_file</label>
+                <input class="form-control" type="text" name="qty_equal_file" placeholder="Number of ”=” signs"
+                    required />  
+
+            </div>
+            <div class="mb-3">
+                <label class="form-label">qty_at_file</label>
+                <input class="form-control" type="text" name="qty_at_file" placeholder="Number of ”@” signs"
+                    required />
+
+            </div>
+            <div class="mb-3">
+                <label class="form-label">qty_and_file</label>
+                <input class="form-control" type="text" name="qty_and_file" placeholder="Number of ”&” signs"
+                    required />
+
+            </div>
+            <div class="mb-3">
+                <label class="form-label">qty_exclamation_file</label>
+                <input class="form-control" type="text" name="qty_exclamation_file" placeholder="Number of ”!” signs"
+                    required />
+
+            </div>
+            <div class="mb-3">
+                <label class="form-label">qty_space_file</label>
+                <input class="form-control" type="text" name="qty_space_file" placeholder="Number of ” ” signs"
+                    required />
+
+            </div>
+            <div class="mb-3">
+                <label class="form-label">qty_tilde_file</label>
+                <input class="form-control" type="text" name="qty_tilde_file" placeholder="Number of ” T' ” signs"
+                    required />
+
+            </div>
+            <div class="mb-3">
+                <label class="form-label">qty_comma_file</label>
+                <input class="form-control" type="text" name="qty_comma_file" placeholder="Number of ”,” signs"
+                    required />
+
+            </div>
+            <div class="mb-3">
+                <label class="form-label">qty_plus_file</label>
+                <input class="form-control" type="text" name="qty_plus_file" placeholder="Number of ”+” signs"
+                    required />
+
+            </div>
+            <div class="mb-3">
+                <label class="form-label">qty_asterisk_file</label>
+                <input class="form-control" type="text" name="qty_asterisk_file" placeholder="Number of ” * ” signs"
+                    required />
+
+            </div>
+            <div class="mb-3">
+                <label class="form-label">qty_hashtag_file</label>
+                <input class="form-control" type="text" name="qty_hashtag_file" placeholder="Number of ”#” signs"
+                    required />
+
+            </div>
+            <div class="mb-3">
+                <label class="form-label">qty_dollar_file</label>
+                <input class="form-control" type="text" name="qty_dollar_file" placeholder="Number of ”$” signs"
+                    required />
+
+            </div>
+            <div class="mb-3">
+                <label class="form-label">qty_percent_file</label>
+                <input class="form-control" type="text" name="qty_percent_file" placeholder="Number of ”%” signs"
+                    required />
+
+            </div>
+            <div class="mb-3">
+                <label class="form-label">file_length</label>
+                <input class="form-control" type="text" name="file_length" placeholder="Number of file name characters"
+                    required />
+
+            </div>
+            <div class="mb-3">
+                <label class="form-label">qty_dot_params</label>
+                <input class="form-control" type="text" name="qty_dot_params" placeholder="Number of ”.” signs"
+                    required />
+
+            </div>
+            <div class="mb-3">
+                <label class="form-label">qty_hyphen_params</label>
+                <input class="form-control" type="text" name="qty_hyphen_params" placeholder="Number of ”-” signs"
+                    required />
+
+            </div>
+            <div class="mb-3">
+                <label class="form-label">qty_underline_params</label>
+                <input class="form-control" type="text" name="qty_underline_params" placeholder="Number of ”_” signs"
+                    required />
+
+            </div>
+            <div class="mb-3">
+                <label class="form-label">qty_slash_params</label>
+                <input class="form-control" type="text" name="qty_slash_params" placeholder="Number of ”/” signs"
+                    required />
+
+            </div>
+            <div class="mb-3">
+                <label class="form-label">qty_questionmark_params</label>
+                <input class="form-control" type="text" name="qty_questionmark_params" placeholder="Number of ”?” signs"
+                    required />
+
+            </div>
+            <div class="mb-3">
+                <label class="form-label">qty_equal_params</label>
+                <input class="form-control" type="text" name="qty_equal_params" placeholder="Number of ”=” signs"
+                    required />
+
+            </div>
+            <div class="mb-3">
+                <label class="form-label">qty_at_params</label>
+                <input class="form-control" type="text" name="qty_at_params" placeholder="Number of ”@” signs"
+                    required />
+
+            </div>
+            <div class="mb-3">
+                <label class="form-label">qty_and_params</label>
+                <input class="form-control" type="text" name="qty_and_params" placeholder="Number of ”&” signs"
+                    required />
+
+            </div>
+            <div class="mb-3">
+                <label class="form-label">qty_exclamation_params</label>
+                <input class="form-control" type="text" name="qty_exclamation_params" placeholder="Number of ”!” signs"
+                    required />
+
+            </div>
+            <div class="mb-3">
+                <label class="form-label">qty_space_params</label>
+                <input class="form-control" type="text" name="qty_space_params" placeholder="Number of ” ” signs"
+                    required />
+
+            </div>
+            <div class="mb-3">
+                <label class="form-label">qty_tilde_params</label>
+                <input class="form-control" type="text" name="qty_tilde_params" placeholder="Number of ” T' ” signs"
+                    required />
+
+            </div>
+            <div class="mb-3">
+                <label class="form-label">qty_comma_params</label>
+                <input class="form-control" type="text" name="qty_comma_params" placeholder="Number of ”,” signs"
+                    required />
+
+            </div>
+            <div class="mb-3">
+                <label class="form-label">qty_plus_params</label>
+                <input class="form-control" type="text" name="qty_plus_params" placeholder="Number of ”+” signs"
+                    required />
+
+            </div>
+            <div class="mb-3">
+                <label class="form-label">qty_asterisk_params</label>
+                <input class="form-control" type="text" name="qty_asterisk_params" placeholder="Number of ”*” signs"
+                    required />
+
+            </div>
+            <div class="mb-3">
+                <label class="form-label">qty_hashtag_params</label>
+                <input class="form-control" type="text" name="qty_hashtag_params" placeholder="Number of ”#” signs"
+                    required />
+
+            </div>
+            <div class="mb-3">
+                <label class="form-label">qty_dollar_params</label>
+                <input class="form-control" type="text" name="qty_dollar_params" placeholder="Number of ”$” signs"
+                    required />
+
+            </div>
+            <div class="mb-3">
+                <label class="form-label">qty_percent_params</label>
+                <input class="form-control" type="text" name="qty_percent_params" placeholder="Number of ”%” signs"
+                    required />
+
+            </div>
+            <div class="mb-3">
+                <label class="form-label">params_length</label>
+                <input class="form-control" type="text" name="params_length" placeholder="Number of parameters characters"
+                    required />
+
+            </div>
+            <div class="mb-3">
+                <label class="form-label">tld_present_params</label>
+                <input class="form-control" type="text" name="tld_present_params" placeholder="TLD present in parameters	Boolean	[0(yes), 1(no)]"
+                    required />
+
+            </div>
+            <div class="mb-3">
+                <label class="form-label">qty_params</label>
+                <input class="form-control" type="text" name="qty_params" placeholder="	Number of parameters"
+                    required />
+
+            </div>
+            <div class="mb-3">
+                <label class="form-label">email_in_url</label>
+                <input class="form-control" type="text" name="email_in_url" placeholder="Is email present	Boolean	[0, 1]"
+                    required />
+
+            </div>
+            <div class="mb-3">
+                <label class="form-label">time_response</label>
+                <input class="form-control" type="text" name="time_response" placeholder="Domain lookup time response"
+                    required />
+
+            </div>
+            <div class="mb-3">
+                <label class="form-label">domain_spf</label>
+                <input class="form-control" type="text" name="domain_spf" placeholder="Domain has SPF Boolean	[0, 1]"
+                    required />
+
+            </div>
+            <div class="mb-3">
+                <label class="form-label">asn_ip</label>
+                <input class="form-control" type="text" name="asn_ip" placeholder=" ASN  "
+                    required />
+
+            </div>
+            <div class="mb-3">
+                <label class="form-label">time_domain_activation</label>
+                <input class="form-control" type="text" name="time_domain_activation" placeholder="Domain activation time (in days)"
+                    required />
+
+            </div>
+            <div class="mb-3">
+                <label class="form-label">time_domain_expiration</label>
+                <input class="form-control" type="text" name="time_domain_expiration" placeholder="Domain expiration time (in days)"
+                    required />
+
+            </div>
+            <div class="mb-3">
+                <label class="form-label">qty_ip_resolved</label>
+                <input class="form-control" type="text" name="qty_ip_resolved" placeholder="Number of resolved IPs"
+                    required />
+
+            </div>
+            <div class="mb-3">
+                <label class="form-label">qty_nameservers</label>
+                <input class="form-control" type="text" name="qty_nameservers" placeholder="Number of resolved NS"
+                    required />
+
+            </div>
+            <div class="mb-3">
+                <label class="form-label">qty_mx_servers</label>
+                <input class="form-control" type="text" name="qty_mx_servers" placeholder="Number of MX5 servers"
+                    required />
+
+            </div>
+            <div class="mb-3">
+                <label class="form-label">ttl_hostname</label>
+                <input class="form-control" type="text" name="ttl_hostname" placeholder="Time-To-Live (TTL)"
+                    required />
+
+            </div>
+            <div class="mb-3">
+                <label class="form-label">tls_ssl_certificate</label>
+                <input class="form-control" type="text" name="tls_ssl_certificate" placeholder="Has valid (TLS 6/SSL 7)certificate	Boolean	[0, 1]"
+                    required />
+
+            </div>
+            <div class="mb-3">
+                <label class="form-label">qty_redirects</label>
+                <input class="form-control" type="text" name="qty_redirects" placeholder="Number of redirects"
+                    required />
+
+            </div>
+            <div class="mb-3">
+                <label class="form-label">url_google_index</label>
+                <input class="form-control" type="text" name="url_google_index" placeholder="Is URL indexed on Google	Boolean	[0(yes), 1(no)]"
+                    required />
+
+            </div>
+            <div class="mb-3">
+                <label class="form-label">domain_google_index</label>
+                <input class="form-control" type="text" name="domain_google_index" placeholder="is domain indexed on Google	Boolean	[0, 1]"
+                    required />
+
+            </div>
+            <div class="mb-3">
+                <label class="form-label">url_shortened</label>
+                <input class="form-control" type="text" name="url_shortened" placeholder=" Boolean	[0, 1]"
+                    required />
+
+            </div>
+            <div class="mb-3">
+                
+                <input class="btn btn-primary" type="submit" value="Predict Legitimate or Phishing Domain" required />
+            </div>
             
-            </form>
-        </div>
+        </form>
+    </div>
 
-        <div class="col-md-6 col-sm-12 col-xs-6 col-lg-6">
-            <div class="card">
-                <div class="card-header">
-                 Phishing Domain Detection
-                </div>
-                <div class="card-body">
-            {% if context['phishing_data'] is not none %}
-            <table class="table table-striped">
-                <caption>Phishing Domain Prediction</caption>
-                <tr>
-                    <th>Input Feature</th>
-                    <th>Feature Value</th>
-                </tr>
-                {% for column, value in context['phishing_data'].items() %}
+    <div class="col-md-6 col-sm-12 col-xs-6 col-lg-6">
+        <div class="card">
+            <div class="card-header">
+              Phishing Domain Detection
+            </div>
+            <div class="card-body">
+        {% if context['phishing_data'] is not none %}
+        <table class="table table-striped">
+            <caption>Phishing Domain Prediction</caption>
+            <tr>
+                <th>Input Feature</th>
+                <th>Feature Value</th>
+            </tr>
+            {% for column, value in context['phishing_data'].items() %}
 
 
-                <tr>
-                    <td>{{ column }}</td>
-                    <td>{{ value[0] }}</td>
-                </tr>
+            <tr>
+                <td>{{ column }}</td>
+                <td>{{ value[0] }}</td>
+            </tr>
 
-                {% endfor %}
-                <tr>
-                    <td>phishing</td>
-                    <td>
-                        {{ context['phishing'] }}
-                    
-                    </td>
+            {% endfor %}
+            <tr>
 
-                </tr>
-                </table>
-                {% else %}
+                <td>phishing</td>
+                <td>
+                    {{ context['phishing'] }}
+                </td>
+            </tr>
+        </table>
+        {% else %}
 
-                    <h5 class="card-title">Submit Form</h5>
-                    <p class="card-text">Kindly provide necessary information to categorize the domain as either legitimate or phishing</p>
+               <h5 class="card-title">Submit Form</h5>
+               <p class="card-text">Kindly provide necessary information to categorize the domain as either legitimate or phishing</p>
                 
                 
             
-                {% endif %}
-                Go to <a href="/" class="btn btn-primary">Home</a>
-            </div>
-        </div>
-            </div>
+        {% endif %}
+        Go to <a href="/" class="btn btn-primary">Home</a>
+    </div>
+</div>
+    </div>
     
-            {% endblock %}
+    {% endblock %}

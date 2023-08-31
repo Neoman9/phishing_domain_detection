@@ -137,7 +137,7 @@ class PhishingData:
             self.server_client_domain= server_client_domain
             self.qty_dot_directory= qty_dot_directory
             self.qty_hyphen_directory= qty_hyphen_directory
-            self.qty_underline_directory=qty_underline_directory
+            self.qty_underline_directory= qty_underline_directory
             self.qty_slash_directory= qty_slash_directory
             self.qty_questionmark_directory= qty_questionmark_directory
             self.qty_equal_directory= qty_equal_directory
