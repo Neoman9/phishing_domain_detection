@@ -6,7 +6,7 @@ training_pipeline_config:
 
 
 data_ingestion_config:
-  dataset_path : 'c:\\Users\\neo\\Downloads\\dataset_full.csv'
+  dataset_path : 'c:\\Users\\nnotebook/data/dataset_full.csv'
   raw_data_dir: raw_data
   ingested_dir: ingested_data
   ingested_train_dir: train
