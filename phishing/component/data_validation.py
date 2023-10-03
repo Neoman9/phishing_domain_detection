@@ -2,6 +2,8 @@ from phishing.logger import logging
 from phishing.exception import PhishingException
 from phishing.entity.artifact_entity import DataIngestionArtifact, DataValidationArtifact
 from phishing.entity.config_entity import DataValidationConfig
+from evidently.report import Report
+from evidently.metric_preset import DataDriftPreset
 
 
 import os, sys
@@ -64,19 +66,60 @@ class DataValidation:
             raise PhishingException(e,sys) from e
         
     def get_and_save_data_drift_report(self):
-        pass
+        try:
+            train_df,test_df = self.get_train_and_test_df()
+            reference = train_df.sample(n=5000, replace=False)
+            current = test_df.sample(n=5000, replace=False)
+
+            report = Report(metrics=[ DataDriftPreset(), ])
+            report.run(reference_data=reference, current_data=current)
+            report
+            report_file_path = self.data_validation_config.report_file_path
+            report_dir = os.path.dirname(report_file_path)
+            os.makedirs(report_dir,exist_ok=True)
+            
+            result = json.loads(report.json())
+            with open(report_file_path,"w") as report_file:
+                json.dump(result,report_file, indent =4)
+
+            return result
+
+
+        except Exception as e:
+            raise PhishingException(e,sys) from e 
         
     def save_data_drift_report_page (self):
-        pass
+        try:
+            train_df,test_df = self.get_train_and_test_df()
+            reference = train_df.sample(n=5000, replace=False)
+            current = test_df.sample(n=5000, replace=False)
+
+            report = Report(metrics=[ DataDriftPreset(), ])
+            report.run(reference_data=reference, current_data=current)
+            report
+            report_page_file_path = self.data_validation_config.report_page_file_path
+            report_page_dir = os.path.dirname(report_page_file_path)
+            os.makedirs(report_page_dir,exist_ok=True)
+
+            report.save_html(report_page_file_path)
+
+        except Exception as e:
+            raise PhishingException(e,sys) from e 
     
     def is_data_drift_found(self) -> bool:
-        pass
+        try:
+            report= self.get_and_save_data_drift_report()
+            self.save_data_drift_report_page()
+
+            return True
+        except Exception as e:
+            raise PhishingException(e,sys) from e
         
     def validate_dataset_schema(self) -> bool:
         try:
             validation_status = False
 
-            #1. Number of Column
+            # Number of Column
 
             # Load the YAML data from the schema file
             #with open(self.data_validation_config.schema_file_path, 'r') as file:
